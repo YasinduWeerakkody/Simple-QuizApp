@@ -3,31 +3,31 @@ import { ref, computed }from 'vue'
 
 const questions = ref([
   {
-    question: "what is the VueJs ?",
+    question: "What is the VueJs ?",
     answer: 0,
     options:[
-      'a front end framework',
-      'an ice-cream',
-      'a Library'
+      'A Front End Framework',
+      'An Ice-cream',
+      'A Library'
     ],
     selected:null
   },
   {
-    question: "what is the Vuex ?",
+    question: "What is the Vuex ?",
     answer: 2,
     options:[
-      'vue with an x',
-      'a cheese',
+      'Vue with an x',
+      'A cheese',
       'State management Library'
     ],
     selected:null
   },
   {
-    question: "what is Vue Router used for",
+    question: "What is Vue Router used for",
     answer: 1,
     options:[
       'Walking a space',
-      'a routing library for Vue JS',
+      'A routing library for Vue JS',
       'Burger Sauce',
       'Quizzes'
     ],
@@ -103,7 +103,7 @@ const NextQuestion = () => {
           :'wrong'
           :''
 
-        }${
+        } ${
           getCurrentQuestion.selected != null &&
           index != getCurrentQuestion.answer
           ? 'disabled'
@@ -207,12 +207,105 @@ nav a:first-of-type {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 body{
   background-color: #271C36;
   color: #fff;
 }
+.app{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+  min-height: 100vh;
+}
 
+h1{
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  
+}
+.quize{
+  background-color: #cfb6f3;
+  padding: 1rem;
+  width: 100%;
+  max-width: 640px;
+  border-radius: 0.5rem;
+}
+
+.quize-info{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+
+}
+
+.quize-info .question{
+  color: #8f8f8f;
+  font-size: 1.25rem;
+}
+
+.quize-info .score{
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+}
+.options{
+  margin-bottom: 1rem;
+}
+.option{
+  display: block;
+  padding: 1rem;
+  background-color: #664c896b;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+.option:hover{
+  background-color: #271C36;
+}
+.option.correct{
+  background-color: #3bf077;
+}
+.option.wrong{
+  background-color: #f65353;
+}
+.option:last-of-type{
+  margin-bottom: 0;
+}
+.option.disabled{
+  opacity: 0.5;
+}
+.option input{
+  display: none;
+}
+button{
+  appearance: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  padding:0.5rem 1rem;
+  border-radius: 0.5rem;
+  color:#ffffff;
+  background-color: #49f849b5;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+/* button:disabled{
+  opacity: 0.5;
+} */
+h2{
+  font-size:1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+p{
+  color: #8d8b90;
+  font-size: 1rem;
+  text-align: center;
+
+}
 </style>
 
